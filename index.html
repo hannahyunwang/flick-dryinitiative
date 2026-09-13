@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Flick-dry Initiative investigates flicking excess water off before drying—starting with hand-drying. Explore our research and Flick-dry &amp; Save, our education app for estimated hand-dryer time and energy savings.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Flick-dry Initiative — Flick first. Dry smarter.</title>
+  <style>
+    :root {
+      --ink: #12342e;
+      --muted: #48645d;
+      --paper: #f6f7ee;
+      --green: #185842;
+      --line: #cdd9cc;
+      --accent: #e4ed99
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: var(--green);
+      text-underline-offset: 4px
+    }
+
+    a:hover {
+      text-decoration-thickness: 3px
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #ad591c;
+      outline-offset: 5px
+    }
+
+    .wrap {
+      width: min(1120px, 90%);
+      margin: auto
+    }
+
+    .skip {
+      position: absolute;
+      top: -90px;
+      padding: 12px;
+      background: white;
+      z-index: 2
+    }
+
+    .skip:focus {
+      top: 8px
+    }
+
+    header {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 25px 0
+    }
+
+    .brand {
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 19px
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 0;
+      max-width: 100%;
+      padding: 6px;
+      gap: 4px 22px;
+      font-size: 14px
+    }
+
+    nav a {
+      flex-shrink: 0;
+      white-space: nowrap;
+      text-decoration: none
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 55px;
+      align-items: center;
+      padding: 85px 0
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .15em;
+      text-transform: uppercase
+    }
+
+    h1 {
+      font-size: clamp(42px, 6.3vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+      margin: 22px 0 26px
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.18;
+      letter-spacing: -.035em;
+      margin: 12px 0 24px
+    }
+
+    h3 {
+      font-size: 21px;
+      line-height: 1.3;
+      margin: 10px 0
+    }
+
+    p {
+      margin: 12px 0 20px
+    }
+
+    .lead {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 640px
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 650;
+      margin: 8px 12px 8px 0
+    }
+
+    .secondary {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green)
+    }
+
+    .visual {
+      background: var(--green);
+      color: var(--paper);
+      padding: 35px;
+      border-radius: 18px
+    }
+
+    .visual svg {
+      display: block;
+      width: 100%;
+      height: auto
+    }
+
+    .visual p {
+      font-size: 14px;
+      margin: 10px 0 0;
+      text-align: center;
+      color: #e1ebd8
+    }
+
+    .status {
+      border-block: 1px solid var(--line);
+      padding: 22px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 25px
+    }
+
+    .pill {
+      display: inline-block;
+      max-width: 100%;
+      white-space: normal;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      background: var(--accent);
+      padding: 6px 12px;
+      border-radius: 30px
+    }
+
+    .status p {
+      margin: 0;
+      font-size: 15px
+    }
+
+    section {
+      padding: 65px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .intro {
+      max-width: 760px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffefa
+    }
+
+    .number {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 0
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px
+    }
+
+    .how-figure {
+      margin: 0 auto;
+      max-width: 760px;
+      min-width: 0
+    }
+
+    .how-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px
+    }
+
+    .how-figure figcaption {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .how-figure a {
+      display: inline-block;
+      padding-block: 8px
+    }
+
+
+    .note {
+      padding: 25px;
+      background: #e7eddf;
+      border-left: 4px solid var(--green);
+      border-radius: 0 10px 10px 0
+    }
+
+    .note p:last-child {
+      margin-bottom: 0
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding: 18px 0
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 650
+    }
+
+    details p {
+      color: var(--muted)
+    }
+
+    footer {
+      padding: 32px 0 45px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .footerline {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px
+    }
+
+    li {
+      margin-bottom: 9px
+    }
+
+    /* Keep content usable with narrow screens, large text, and display cutouts. */
+    body {
+      overflow-wrap: anywhere;
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    .hero>*,
+    .two>*,
+    .grid>* {
+      min-width: 0
+    }
+
+    .status>.pill {
+      flex-shrink: 0
+    }
+
+    .button {
+      max-width: 100%;
+      text-align: center
+    }
+
+    .brand,
+    nav a,
+    .footerline a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px
+    }
+
+    summary {
+      min-height: 44px;
+      padding-block: 8px
+    }
+
+    /* Tablets retain paired cards, without squeezing the hero or navigation. */
+    @media (min-width: 761px) and (max-width: 1100px) {
+      .bar {
+        flex-wrap: wrap;
+        gap: 12px
+      }
+
+      nav {
+        column-gap: 20px;
+        row-gap: 4px
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 28px;
+        padding: 55px 0
+      }
+
+      .visual {
+        padding: 22px
+      }
+
+      .two {
+        gap: 24px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .grid> :last-child:nth-child(odd) {
+        grid-column: 1 / -1
+      }
+
+      .card {
+        padding: 22px
+      }
+    }
+
+    @media(max-width:760px) {
+      .bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px
+      }
+
+      .bar {
+        padding: 16px 0
+      }
+
+      nav {
+        width: 100%;
+        gap: 4px 18px;
+        font-size: 14px
+      }
+
+      nav a {
+        justify-content: center;
+        line-height: 1.4
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 0;
+        gap: 30px
+      }
+
+      .visual {
+        max-width: 400px;
+        justify-self: center;
+        padding: 25px
+      }
+
+      .grid,
+      .two {
+        grid-template-columns: 1fr;
+        gap: 20px
+      }
+
+      .status {
+        flex-direction: column;
+        gap: 10px
+      }
+
+      section {
+        padding: 45px 0
+      }
+
+      .footerline {
+        flex-direction: column;
+        gap: 8px
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: calc(100% - 32px)
+      }
+
+      h1 {
+        font-size: clamp(36px, 10vw, 48px)
+      }
+
+      .lead {
+        font-size: 18px
+      }
+
+      .card,
+      .note {
+        padding: 20px
+      }
+
+      .visual {
+        width: 100%;
+        padding: 18px
+      }
+
+      .button {
+        display: block;
+        width: 100%;
+        margin: 16px 0 8px
+      }
+
+      ol,
+      ul {
+        padding-left: 24px
+      }
+    }
+
+    @media (pointer: coarse) {
+      nav a {
+        min-width: 44px
+      }
+
+      a {
+        touch-action: manipulation
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+    }
+
+    @media print {
+      body {
+        background: white
+      }
+
+      .visual {
+        display: none
+      }
+
+      .hero {
+        display: block;
+        padding: 20px 0
+      }
+
+      .button,
+      nav {
+        display: none
+      }
+
+      section {
+        padding: 20px 0
+      }
+
+      .card {
+        break-inside: avoid
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap bar"><a class="brand" href="#">Flick-dry Initiative</a>
+      <nav aria-label="Main navigation"><a href="#flick-dry">What is flick-dry?</a><a href="#how-to-flick-dry">How to
+          flick-dry</a><a href="#mission-vision">Mission</a><a href="#question">Approach</a><a
+          href="#publications">Findings</a><a href="#app">App</a><a href="#about">About</a></nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Youth-led research </div>
+        <h1>Flick first.<br>Dry smarter.</h1>
+        <p class="lead">Flick-dry. Use less dryer time. Experience the savings.</p>
+        <p>We’re starting with hand-drying: can flicking excess water off before using an electric hand dryer
+          reduce its running time and energy use? Our first studies measure how much flicking reduces dryer running
+          time—and the energy saved by running the dryer for less time.</p>
+      </div>
+      <div class="visual"><svg viewBox="0 0 340 330" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">Compare, measure, understand</title>
+          <desc id="diagram-desc">Small wet hands with water on their palms lead to two alternatives. Left: Direct-dry,
+            with a dryer blowing air. Right: Flick-dry, highlighted in color, with flicking hands shedding
+            three droplets followed by a dryer blowing air. Both paths lead to a comparison of dryer running time. This
+            is a conceptual diagram, not results.</desc>
+          <defs>
+            <g id="hand-pair" transform="translate(0 174) scale(1 -1)">
+              <g transform="rotate(20 112 110)">
+                <path
+                  d="M94 154 L91 132 C77 120 75 108 75 96 L64 65 Q61 56 67 53 Q73 50 77 59 L89 84 L79 40 Q77 32 84 30 Q91 28 94 37 L106 78 L103 28 Q103 20 110 20 Q118 20 119 28 L122 77 L128 41 Q129 33 136 35 Q143 37 141 45 L136 97 L146 86 Q152 79 158 85 Q163 90 158 97 L142 120 Q137 132 131 138 L132 154 Z"
+                  fill="#e4ed99" stroke="#185842" stroke-width="4" stroke-linejoin="round" />
+                <path d="M100 110 Q118 111 127 126 M100 142 L124 142" fill="none" stroke="#185842" stroke-width="4"
+                  stroke-linecap="round" />
+              </g>
+              <g transform="translate(340 0) scale(-1 1) rotate(20 112 110)">
+                <path
+                  d="M94 154 L91 132 C77 120 75 108 75 96 L64 65 Q61 56 67 53 Q73 50 77 59 L89 84 L79 40 Q77 32 84 30 Q91 28 94 37 L106 78 L103 28 Q103 20 110 20 Q118 20 119 28 L122 77 L128 41 Q129 33 136 35 Q143 37 141 45 L136 97 L146 86 Q152 79 158 85 Q163 90 158 97 L142 120 Q137 132 131 138 L132 154 Z"
+                  fill="#e4ed99" stroke="#185842" stroke-width="4" stroke-linejoin="round" />
+                <path d="M100 110 Q118 111 127 126 M100 142 L124 142" fill="none" stroke="#185842" stroke-width="4"
+                  stroke-linecap="round" />
+              </g>
+            </g>
+            <g id="dryer-icon">
+              <rect x="3" y="0" width="44" height="36" rx="9" fill="#f6f7ee" stroke="#185842" stroke-width="2" />
+              <path d="M12 10 H38" stroke="#cdd9cc" stroke-width="2" />
+              <circle cx="37" cy="23" r="2" fill="#185842" />
+              <rect x="13" y="30" width="24" height="6" rx="3" fill="#185842" />
+              <g fill="none" stroke="#185842" stroke-width="2" stroke-linecap="round">
+                <path d="M16 41 C10 47 22 51 16 58 M25 41 C19 47 31 51 25 58 M34 41 C28 47 40 51 34 58" />
+              </g>
+            </g>
+          </defs>
+          <text x="170" y="33" fill="#ffffff" font-family="system-ui,sans-serif" font-size="16" font-weight="400"
+            text-anchor="middle">Wet hands</text>
+          <g id="wet-hands-start" transform="translate(127.5 46) scale(0.25)">
+            <use href="#hand-pair" />
+            <g id="surface-droplets" fill="#ffffff" fill-opacity="0.7" stroke="#8daba6" stroke-opacity="0.65"
+              stroke-width="2" transform="translate(0 174) scale(1 -1)">
+              <g transform="rotate(20 112 110)">
+                <path transform="translate(99 88) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+                <path transform="translate(122 112) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+                <path transform="translate(112 57) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+              </g>
+              <g transform="translate(340 0) scale(-1 1) rotate(20 112 110)">
+                <path transform="translate(99 88) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+                <path transform="translate(122 112) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+                <path transform="translate(112 57) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
+              </g>
+            </g>
+          </g>
+          <path d="M170 94 V112 M83 128 V112 H257 V128" stroke="#c6dbbf" stroke-width="2" fill="none" />
+          <g id="direct-drying">
+            <rect x="12" y="128" width="142" height="140" rx="14" fill="#f6f7ee" /><text x="83" y="151" fill="#12342e"
+              font-family="system-ui,sans-serif" font-size="16" text-anchor="middle">Direct-dry</text>
+            <use href="#dryer-icon" transform="translate(55.5 178) scale(1.1)" />
+          </g>
+          <g id="flick-dry-diagram">
+            <rect x="186" y="128" width="142" height="140" rx="14" fill="#e4ed99" /><text x="257" y="151" fill="#12342e"
+              font-family="system-ui,sans-serif" font-size="16" font-weight="750" text-anchor="middle">Flick-dry</text>
+            <!-- Match the Flick illustration in assets/images/wash-flick-dry.svg. -->
+            <g id="flicking-hands" transform="translate(257 160) scale(0.25) translate(-337 -945)">
+              <defs>
+                <g id="flick-hand" stroke="#185842" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+                  <path
+                    d="M 40 0 L 115 0 L 116 60 C 122 77 141 85 153 100 C 164 113 151 129 139 121 L 119 108 L 118 192 C 118 214 95 213 95 193 L 94 142 L 91 218 C 90 239 68 238 68 216 L 67 143 L 64 210 C 63 231 42 230 42 208 L 42 136 L 39 186 C 37 203 17 199 18 181 L 22 107 C 22 87 34 68 38 52 Z"
+                    fill="#edc9a5" />
+                  <path d="M 50 81 Q 79 91 101 78 M 59 107 Q 79 112 93 105" fill="none" stroke="#ba8861"
+                    stroke-width="3" />
+                </g>
+                <g id="flick-drop">
+                  <path d="M 0 -13 C -5 -5 -10 1 -10 7 A 10 10 0 0 0 10 7 C 10 1 5 -5 0 -13 Z" fill="#73a9a1" />
+                </g>
+              </defs>
+              <use href="#flick-hand" transform="translate(180 970) rotate(-60) scale(.63) translate(-77 0)" />
+              <use href="#flick-hand"
+                transform="translate(494 970) scale(-1 1) rotate(-60) scale(.63) translate(-77 0)" />
+              <g fill="none" stroke="#185842" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path transform="translate(308 1042) rotate(-60) scale(.8) translate(-308 -1042)"
+                  d="M 284 1058 Q 308 1078 332 1058 M 286 1066 L 284 1058 L 292 1058 M 324 1058 L 332 1058 L 330 1066" />
+                <path transform="translate(366 1042) rotate(60) scale(.8) translate(-366 -1042)"
+                  d="M 342 1058 Q 366 1078 390 1058 M 344 1066 L 342 1058 L 350 1058 M 382 1058 L 390 1058 L 388 1066" />
+              </g>
+              <g id="falling-droplets">
+                <use href="#flick-drop" transform="translate(287 1100) scale(.7)" />
+                <use href="#flick-drop" transform="translate(308 1124) scale(.7)" />
+                <use href="#flick-drop" transform="translate(366 1106) scale(.7)" />
+              </g>
+            </g>
+            <use href="#dryer-icon" transform="translate(237 211) scale(0.8)" />
+          </g>
+          <path d="M83 276 V290 H257 V276 M170 290 V299" stroke="#c6dbbf" stroke-width="2" fill="none" />
+          <text x="170" y="322" fill="#e4ed99" font-family="system-ui,sans-serif" font-size="15"
+            text-anchor="middle">Compare dryer running time</text>
+        </svg>
+        <p>Less dryer running time means less energy use.</p>
+      </div>
+    </div>
+    <section id="flick-dry" aria-labelledby="flick-dry-heading">
+      <h2 id="flick-dry-heading">What does flick-dry mean?</h2>
+      <article class="card" aria-labelledby="flick-dry-word">
+        <h3 id="flick-dry-word" style="font-family:Georgia,serif;font-size:32px">flick-dry</h3>
+        <p><em>verb</em> · flick-dries; flick-dried; flick-drying</p>
+        <p>To flick excess water off, then dry.</p>
+        <p><em>noun</em></p>
+        <p>A drying routine in which excess water is flicked off before drying.</p>
+      </article>
+      <h3>Our first focus: hand-drying</h3>
+      <p>The Initiative’s research and public education begin with
+        hand-drying; our current findings and guidance apply to that setting, not to other drying uses.</p>
+    </section>
+    <section id="how-to-flick-dry" aria-labelledby="how-to-flick-dry-heading">
+      <h2 id="how-to-flick-dry-heading">How to flick-dry hands</h2>
+      <div style="width:100%;max-width:900px;margin:24px auto;">
+        <iframe src="https://www.youtube-nocookie.com/embed/b2ZPAjqUzDY" title="How to wash and flick-dry your hands"
+          width="900" height="506"
+          style="display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:12px;" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        <p style="font-size:14px;">Video hosted by YouTube. <a href="https://youtu.be/b2ZPAjqUzDY" target="_blank"
+            rel="noopener noreferrer">Watch on YouTube</a>.</p>
+      </div>
+      <figure class="how-figure">
+        <img src="assets/images/wash-flick-dry.svg" width="1200" height="1500" loading="lazy" decoding="async"
+          alt="Two-step hand-care routine: 1. Wash with soap and water. 2. Flick-dry: flick both hands over the sink, then use the hand dryer until your hands feel dry.">
+        <figcaption><a href="assets/images/wash-flick-dry.svg">Open the illustration full-size</a></figcaption>
+      </figure>
+    </section>
+    <section id="mission-vision" aria-label="Our mission and vision" style="padding:30px 0 40px">
+      <div class="two">
+        <article class="card">
+          <div class="eyebrow">Our mission</div>
+          <h2>Research, Evidence, <br>and Public education</h2>
+          <p>Investigate flick-dry practices through research, develop evidence-based guidance, and share clear,
+            accessible public education to help people make informed choices about drying and resource use—starting with
+            hand-drying.</p>
+        </article>
+        <article class="card" style="background:var(--green);color:var(--paper)">
+          <div class="eyebrow">Our vision</div>
+          <h2>Flick-dry Everywhere.</h2>
+          <p style="color:var(--paper)">A world where flick-dry is an everyday habit that saves
+            energy.</p>
+          <p style="font-size:14px;color:var(--paper)">Our aspiration guides the project; evidence determines where and
+            how the practice should be recommended.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="question">
+      <div class="intro">
+        <div class="eyebrow">01 / The approach</div>
+        <h2>Measure the time saved.<br>Understand the energy savings.</h2>
+        <p>Our initial hand-drying studies measure how much flicking excess water off before using an electric hand
+          dryer reduces dryer running time and saves energy. Participants stop when their hands feel dry, just as they
+          would in everyday use. We also track total task time, check timing accuracy, and follow safe-use practices.
+        </p>
+      </div>
+      <div id="methods"></div>
+      <div class="two">
+        <div>
+          <p>Use this approach to compare flick-dry and direct-dry for yourself.</p>
+          <ol>
+            <li><strong>Define the procedure.</strong> Document the dryer, initial hand-wetting conditions, and flicking
+              procedure. Use the same instruction in both conditions: stop when your hands feel dry. Perceived dryness
+              will differ between individuals, but should make sense in the context of both conditions.</li>
+            <li><strong>Control for confounding variables.</strong> Use the same person and same dryer for all trials.
+            </li>
+            <li><strong>Review the measurements.</strong> Check dryer events and timing, retain outliers with reasons,
+              and keep dryer runtime separate from total task time and electricity measurements.</li>
+            <li><strong>Report the results and context.</strong> Explain sample size, variability, assumptions, and
+              where the
+              findings may not generalize. Null or unfavorable findings belong in the public record too.</li>
+          </ol>
+        </div>
+        <aside class="note">
+          <h3>Safety and privacy come first</h3>
+          <p>Site permission and appropriate participant consent is needed. Avoid bystander recordings
+            in washrooms and consider splash, slip, and accessibility risks.</p>
+          <p>Do not alter dryer wiring or access main electricity without qualified assistance and authorization. This
+            project does not establish hygiene benefits or replace facility guidance.</p>
+        </aside>
+      </div>
+      <details>
+        <summary>What does the measurement app establish?</summary>
+        <p>The app measures dryer running time and lets users review each recorded run. Shorter running time means less
+          energy used. Private working records and editable tools are not exposed through this website.</p>
+      </details>
+      <details>
+        <summary>How will evidence be described?</summary>
+        <p>Reports describe the recorded runtimes, the power values used to calculate energy savings, and the conditions
+          covered by each comparison.</p>
+      </details>
+    </section>
+    <section id="publications">
+      <div class="eyebrow">02 / Findings</div>
+      <h2>From background research to first observations.</h2>
+      <div class="two">
+        <article class="card"><span class="pill">STAGE 1 · LITERATURE REVIEW</span>
+          <h3>Flicking Water Off Before Hand Drying: A Literature Review</h3>
+          <p><strong>Abstract</strong></p>
+          <p>Flicking excess water from washed hands before using a towel or electric dryer is a plausible
+            resource-saving intervention, but its incremental effect must be distinguished from the effects of
+            subsequent drying. Crucially, flicking is already embedded in relevant experimental protocols: Patrick et
+            al.
+            used two flicks before drying-efficiency measurements and the wet bacterial-transfer baseline, while Suen et
+            al. required at least five flicks before comparing drying methods.[1][7]
+            Research shows that environmental comparisons depend on equipment, resource use,
+            and modeling assumptions.[1][3][11] However, the sources examined do not establish a causal conversion from
+            flick count to water removal, towel savings, or electricity savings at equivalent final dryness. This review
+            synthesizes protocol evidence, behavioral research, and supports dose-controlled evaluation of pre-flicking.
+          </p>
+
+          <p>Numbered references are listed in the full review.</p>
+        </article>
+        <article class="card"><span class="pill">STAGE 2 · EXPLORATORY</span>
+          <h3>The first observations</h3>
+          <p>Analysis snapshot · September 6, 2026</p>
+          <p>14 exports, 102 unique runs, and 15 provisional comparison sets. After six invalid measurements are
+            excluded, 96 reviewed runs contribute to within-set comparisons.</p>
+          <p>Every comparison set recorded a lower median
+            dryer runtime with flick-dry. Larger studies will help show how savings vary across users and dryers.</p><a
+            class="button" href="research/stage-2/">Read the Stage 2 report →</a>
+        </article>
+      </div>
+      <div id="development" style="margin-top:35px">
+        <h3>How the first observations were developed</h3>
+        <p>How we developed the timing tool and compared the two drying routines</p>
+        <div class="grid">
+          <article class="card"><span class="number">01 / COLLECT &amp; DEVELOP</span>
+            <h3>From dryer data to a measurement tool</h3>
+            <p>Collect dryer-running data first, then use those recordings to inform development of the
+              <strong>Flick First Dryer Verifier</strong> app. These recordings were used to develop and check the
+              dryer-timing tool.
+            </p>
+          </article>
+          <article class="card"><span class="number">02 / RECORD &amp; REVIEW</span>
+            <h3>Compare the two conditions</h3>
+            <p>Use the Flick First Dryer Verifier to record dryer runs for trials of flick-dry and direct-dry. Review
+              the
+              events and classify each as flick-dry, direct-dry, or invalid measurement.</p>
+          </article>
+          <article class="card"><span class="number">03 / ANALYZE &amp; REPORT</span>
+            <h3>Turn reviewed runs into observations</h3>
+            <p>Check archive and timing consistency, remove repeated exports, exclude invalid measurements, and
+              compare runtimes within provisional sets. Publish the results with sample sizes, assumptions, and
+              limitations.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+    <section id="app">
+      <div id="pilot"></div>
+      <div class="eyebrow">03 / Public education</div>
+      <h2>Flick-dry &amp; Save</h2>
+      <div class="two">
+        <div><span class="pill">TEST BUILD · DEVICE VALIDATION PENDING</span>
+          <h3>Learn a habit. See your local progress.</h3>
+          <p>Our education-first app focuses on flick-dry for hand-drying, uses the microphone to estimate hand-dryer
+            running time, and asks
+            whether each use included flick-dry. Select the same physical dryer to compare uses involving
+            flick-dry or direct-dry, with per-use and cumulative estimated time and energy changes.</p>
+          <p>Measurements stay local to your phone. No raw audio is saved, and no account or upload server is required.
+            An optional ZIP export lets you choose whether to email your measurements. Monitoring has a manual Stop
+            control and an automatic timeout.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="eyebrow">04 / About the initiative</div>
+      <h2>Student-led. Open to partnerships.</h2>
+      <div class="two">
+        <div>
+          <p>Visiting science museums in different cities has always been part of my family vacation. After visiting so
+            many science museums, the exhibits started to blend. However, one I still recall vividly was an exhibit
+            about flicking excess water off your hands to use less paper to dry them. What struck me was the idea that
+            such a small, seemingly insignificant action could have a meaningful impact. The specific museum and city
+            have long since slipped my mind, but the idea the exhibit presented stayed with me. It made me wonder how I
+            could apply this concept to a society increasingly dependent on electricity; in particular, I wondered how
+            flicking excess water could reduce the energy consumption of electric hand dryers.</p>
+
+          <p>That question was the beginning of the Flick-dry Initiative. Starting with a review of current research, I
+            developed app prototypes and collected and analyzed data. The early app prototypes did not work. Rather than
+            keep adjusting them, I switched to a data-driven approach: I collected recordings of dryers running, labeled
+            the data, and used those labels to develop the Flick First Dryer Verifier app. This approach produced a
+            working tool for recording dryer running times and supporting comparisons between flick-dry and direct-dry
+            trials. </p>
+
+          <p>My goal is to bring this work into public education and build partnerships with schools, researchers, and
+            communities. Through this website and the Flick-dry & Save app, I want to help people understand and try a
+            simple habit: flick excess water off first, then dry their hands. By working with partners to share the idea
+            and test it in everyday settings, I hope to turn the vision into practice—small changes in daily habits that
+            make a big impact on resource savings.
+          </p>
+
+        </div>
+        <aside class="note">
+          <h3>Partner with us</h3>
+          <p>I would love to work with people who share my interest in making small everyday actions count. If you are
+            part of a school, research team, community group, or facility, you could help me bring this idea to more
+            people, develop educational materials, or test the Flick-dry &amp; Save app in everyday settings.</p>
+          <p>I am also looking for guidance on checking my measurements and funding to support public education and
+            future pilots. Any pilot would take place with site permission and appropriate consent. If you would like
+            to get involved, please <a href="#contact">get in touch</a>—I would love to hear your ideas.</p>
+        </aside>
+      </div>
+    </section>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact us</h2>
+      <div class="intro">
+        <p>Questions, feedback, or interested in supporting the Flick-dry Initiative? We’d love to hear from you.</p>
+        <p><strong>Email us:</strong> <a
+            href="mailto:contact@flick-dryinitiative.org">contact@flick-dryinitiative.org</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="footerline"><span>Flick-dry Initiative · Ottawa, Canada</span><a href="#contact">Contact us</a><a
+        href="#main">Back to top
+        ↑</a></div>
+    <p>A public research website. We use Cloudflare Web Analytics for aggregate website usage and performance
+      statistics, without analytics cookies, advertising tracking, or session replay. No research-participant
+      records or app measurements are sent to this service. <a href="#privacy">Privacy details</a>.</p>
+    <details id="privacy">
+      <summary>Website analytics and privacy</summary>
+      <p>Our homepage and research pages load a Cloudflare analytics script in your browser. It sends page-view
+        and loading-performance measurements to Cloudflare so we can understand website reach and usability.
+        Reports can include page paths, referring websites, country, and browser/device categories.
+        Cloudflare states that Web Analytics does not track individuals across websites.</p>
+      <p>Cloudflare receives the network requests, including the IP address needed to deliver them;
+        cookieless analytics does not mean no data is processed. Cloudflare currently describes access to
+        the previous six months of analytics, with unsampled beacon data retained for seven days and
+        reduced data used afterward. See
+        <a href="https://developers.cloudflare.com/web-analytics/faq/">Cloudflare’s analytics documentation</a>
+        and <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a> for its current practices.
+      </p>
+      <p>This website analytics is separate from the Flick-dry &amp; Save app and research records. We do not
+        add names, email addresses, recordings, or participant identifiers to analytics. GitHub Pages also
+        logs visitor IP addresses for security purposes. The website remains usable if your browser blocks
+        the analytics script or JavaScript is disabled.</p>
+    </details>
+  </footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "bb09c1bdc38b4dc6b11221caf2ec21e2"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

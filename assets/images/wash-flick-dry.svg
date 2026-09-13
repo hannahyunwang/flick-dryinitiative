@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+<defs>
+<style>
+text {font-family: 'DejaVu Sans', sans-serif; fill:#12342e}
+.small {font-size:21px;fill:#48645d}
+.body {font-size:28px;fill:#48645d}
+.label {font-size:24px;font-weight:700;letter-spacing:3px}
+.title {font-size:66px;font-weight:700;letter-spacing:-2px}
+</style>
+<!-- An open hand, fingers downward. -->
+<g id="hand" stroke="#185842" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 40 0 L 115 0 L 116 60 C 122 77 141 85 153 100 C 164 113 151 129 139 121 L 119 108 L 118 192 C 118 214 95 213 95 193 L 94 142 L 91 218 C 90 239 68 238 68 216 L 67 143 L 64 210 C 63 231 42 230 42 208 L 42 136 L 39 186 C 37 203 17 199 18 181 L 22 107 C 22 87 34 68 38 52 Z" fill="#edc9a5"/>
+<path d="M 50 81 Q 79 91 101 78 M 59 107 Q 79 112 93 105" fill="none" stroke="#ba8861" stroke-width="3"/>
+</g>
+<g id="drop"><path d="M 0 -13 C -5 -5 -10 1 -10 7 A 10 10 0 0 0 10 7 C 10 1 5 -5 0 -13 Z" fill="#73a9a1"/></g>
+</defs>
+<rect width="1200" height="1500" fill="#f6f7ee"/>
+<text x="64" y="77" class="label" fill="#185842">FLICK-DRY INITIATIVE</text>
+<text x="60" y="172" class="title">Wash. Then flick-dry.</text>
+<text x="64" y="226" class="body">Clean hands. A little less water to dry.</text>
+
+<!-- Main step one -->
+<rect x="60" y="277" width="1080" height="310" rx="25" fill="#fff" stroke="#cdd9cc" stroke-width="2"/>
+<circle cx="124" cy="344" r="32" fill="#185842"/>
+<text x="124" y="356" text-anchor="middle" style="font-size:33px;font-weight:700;fill:white">1</text>
+<text x="184" y="362" style="font-size:49px;font-weight:700">Wash</text>
+<text x="184" y="430" class="body">Wash your hands</text>
+<text x="184" y="471" class="body">with soap and water.</text>
+<text x="184" y="529" class="small">Rinse well before flick-drying.</text>
+<!-- washing hands and soap bubbles -->
+<g transform="translate(865 535) rotate(-150) scale(.85) translate(-77 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<g transform="translate(945 535) scale(-1 1) rotate(-150) scale(.85) translate(-77 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<g fill="#f6f7ee" stroke="#73a9a1" stroke-width="3">
+<circle cx="815" cy="428" r="18"/><circle cx="835" cy="450" r="15"/><circle cx="984" cy="466" r="20"/><circle cx="1005" cy="444" r="12"/>
+<circle cx="810" cy="370" r="12"/><circle cx="993" cy="371" r="15"/><circle cx="1026" cy="411" r="8"/>
+</g>
+
+<!-- Main step two, enclosing both substeps -->
+<rect x="60" y="620" width="1080" height="744" rx="25" fill="#edf1de" stroke="#cdd9cc" stroke-width="2"/>
+<circle cx="124" cy="689" r="32" fill="#185842"/>
+<text x="124" y="701" text-anchor="middle" style="font-size:33px;font-weight:700;fill:white">2</text>
+<text x="184" y="708" style="font-size:49px;font-weight:700">Flick-dry</text>
+<text x="184" y="757" class="body">Flick excess water off. Then dry using a hand dryer.</text>
+
+<rect x="88" y="797" width="498" height="460" rx="18" fill="#fff"/>
+<rect x="610" y="797" width="502" height="460" rx="18" fill="#fff"/>
+<rect x="116" y="824" width="63" height="42" rx="21" fill="#e4ed99"/>
+<text x="148" y="853" text-anchor="middle" style="font-size:22px;font-weight:700">2a</text>
+<text x="195" y="857" style="font-size:33px;font-weight:700">Flick</text>
+<rect x="638" y="824" width="63" height="42" rx="21" fill="#e4ed99"/>
+<text x="670" y="853" text-anchor="middle" style="font-size:22px;font-weight:700">2b</text>
+<text x="717" y="857" style="font-size:33px;font-weight:700">Dry</text>
+
+<!-- Flick illustration -->
+<g transform="translate(180 970) rotate(-60) scale(.63) translate(-77 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<g transform="translate(494 970) scale(-1 1) rotate(-60) scale(.63) translate(-77 0)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<g stroke="#185842" stroke-width="5" fill="none" stroke-linecap="round">
+<path stroke-width="2.5" stroke-linejoin="round" transform="translate(308 1042) rotate(-60) scale(.8) translate(-308 -1042)" d="M 284 1058 Q 308 1078 332 1058 M 286 1066 L 284 1058 L 292 1058 M 324 1058 L 332 1058 L 330 1066"/>
+<path stroke-width="2.5" stroke-linejoin="round" transform="translate(366 1042) rotate(60) scale(.8) translate(-366 -1042)" d="M 342 1058 Q 366 1078 390 1058 M 344 1066 L 342 1058 L 350 1058 M 382 1058 L 390 1058 L 388 1066"/>
+</g>
+<g xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#drop" transform="translate(287 1100) scale(.7)"/><use xlink:href="#drop" transform="translate(308 1124) scale(.7)"/><use xlink:href="#drop" transform="translate(366 1106) scale(.7)"/></g>
+<text x="337" y="1170" text-anchor="middle" class="body">Flick 12 times over the sink.</text>
+<text x="337" y="1211" text-anchor="middle" class="small">Keep splashes contained.</text>
+
+<!-- dryer, airflow, hands -->
+<rect x="778" y="897" width="168" height="111" rx="23" fill="#edf1de" stroke="#185842" stroke-width="5"/>
+<path d="M 798 920 L 926 920" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+<rect x="821" y="987" width="82" height="13" rx="6" fill="#185842"/>
+<g fill="none" stroke="#73a9a1" stroke-width="4" stroke-linecap="round"><path d="M 832 1021 L 822 1044 M 861 1021 L 861 1047 M 891 1021 L 901 1044"/></g>
+<g transform="translate(835 1128) rotate(202) scale(.34)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<g transform="translate(889 1128) scale(-.34 .34) rotate(202)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand"/></g>
+<text x="861" y="1170" text-anchor="middle" class="body">Use the hand dryer.</text>
+<text x="861" y="1211" text-anchor="middle" class="small">Stop when your hands feel dry.</text>
+
+<path d="M 575 1035 L 621 1035 M 610 1024 L 621 1035 L 610 1046" fill="none" stroke="#185842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="600" y="1319" text-anchor="middle" style="font-size:25px;font-weight:700;fill:#185842">Less water to dry can mean less dryer time.</text>
+<path d="M 64 1410 H 1136" stroke="#cdd9cc" stroke-width="2"/>
+<text x="64" y="1455" class="small">Flick first. Dry smarter.</text>
+<text x="1136" y="1455" text-anchor="end" class="small">Flick-dry &amp; Save</text>
+</svg>
