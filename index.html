@@ -377,6 +377,37 @@
       font-size: 13px
     }
 
+    .instagram-follow {
+      text-align: center
+    }
+
+    .instagram-qr {
+      display: block;
+      width: min(240px, 100%);
+      margin: 24px auto 8px;
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .instagram-qr img {
+      display: block;
+      width: 100%;
+      height: auto
+    }
+
+    .instagram-handle {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-weight: 650
+    }
+
+    .instagram-hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px
+    }
+
     .footerline {
       display: flex;
       justify-content: space-between;
@@ -1005,6 +1036,18 @@
         <p><strong>Email us:</strong> <a
             href="mailto:contact@flick-dryinitiative.org">contact@flick-dryinitiative.org</a></p>
       </div>
+    </section>
+    <section id="instagram" class="instagram-follow" aria-labelledby="instagram-heading">
+      <h2 id="instagram-heading">Follow the Flick Dry Initiative</h2>
+      <p>See demos, project updates, and ways to take part.</p>
+      <a class="instagram-qr" href="https://www.instagram.com/flickdryinitiative/"
+        target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/instagram-qr.png" width="600" height="600" loading="lazy"
+          alt="Visit @flickdryinitiative on Instagram (opens in a new tab)">
+      </a>
+      <a class="instagram-handle" href="https://www.instagram.com/flickdryinitiative/"
+        target="_blank" rel="noopener noreferrer">@flickdryinitiative</a>
+      <p class="instagram-hint">Tap or scan to visit Instagram.</p>
     </section>
   </main>
   <footer class="wrap">
