@@ -88,7 +88,7 @@ text {font-family: 'DejaVu Sans', sans-serif; fill:#12342e}
 <ns0:g transform="translate(0 100)">
 <ns0:path d="M 64 1410 H 1136" stroke="#cdd9cc" stroke-width="2" />
 <ns0:text x="64" y="1455" class="small">Flick first. Dry smarter.</ns0:text>
-<ns0:text x="1136" y="1455" text-anchor="end" class="small">Flick-dry &amp; Save</ns0:text>
+<ns0:text x="1136" y="1455" text-anchor="end" class="small">Flick-dry</ns0:text>
 
 <ns0:g id="contact-footer" aria-label="Website and contact information">
 <ns0:text x="300" y="1532" text-anchor="start" style="font-size:25px;font-weight:700">Learn more. Get in touch.</ns0:text>
