@@ -699,26 +699,17 @@
       </div>
       <div class="visual"><svg viewBox="0 0 340 330" role="img" aria-labelledby="diagram-title diagram-desc">
           <title id="diagram-title">Compare, measure, understand</title>
-          <desc id="diagram-desc">Small wet hands with water on their palms lead to two alternatives. Left: Direct-dry,
+          <desc id="diagram-desc">Small peach-colored hands with four pale-blue surface droplets, labeled Wet hands, lead to two alternatives. Left: Direct-dry,
             with a dryer blowing air. Right: Flick-dry, highlighted in color, with flicking hands shedding
             three droplets followed by a dryer blowing air. Both paths lead to a comparison of dryer running time. This
             is a conceptual diagram, not results.</desc>
           <defs>
-            <g id="hand-pair" transform="translate(0 174) scale(1 -1)">
-              <g transform="rotate(20 112 110)">
-                <path
-                  d="M94 154 L91 132 C77 120 75 108 75 96 L64 65 Q61 56 67 53 Q73 50 77 59 L89 84 L79 40 Q77 32 84 30 Q91 28 94 37 L106 78 L103 28 Q103 20 110 20 Q118 20 119 28 L122 77 L128 41 Q129 33 136 35 Q143 37 141 45 L136 97 L146 86 Q152 79 158 85 Q163 90 158 97 L142 120 Q137 132 131 138 L132 154 Z"
-                  fill="#e4ed99" stroke="#185842" stroke-width="4" stroke-linejoin="round" />
-                <path d="M100 110 Q118 111 127 126 M100 142 L124 142" fill="none" stroke="#185842" stroke-width="4"
-                  stroke-linecap="round" />
-              </g>
-              <g transform="translate(340 0) scale(-1 1) rotate(20 112 110)">
-                <path
-                  d="M94 154 L91 132 C77 120 75 108 75 96 L64 65 Q61 56 67 53 Q73 50 77 59 L89 84 L79 40 Q77 32 84 30 Q91 28 94 37 L106 78 L103 28 Q103 20 110 20 Q118 20 119 28 L122 77 L128 41 Q129 33 136 35 Q143 37 141 45 L136 97 L146 86 Q152 79 158 85 Q163 90 158 97 L142 120 Q137 132 131 138 L132 154 Z"
-                  fill="#e4ed99" stroke="#185842" stroke-width="4" stroke-linejoin="round" />
-                <path d="M100 110 Q118 111 127 126 M100 142 L124 142" fill="none" stroke="#185842" stroke-width="4"
-                  stroke-linecap="round" />
-              </g>
+            <g id="flick-hand" stroke="#185842" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+              <path
+                d="M 40 0 L 115 0 L 116 60 C 122 77 141 85 153 100 C 164 113 151 129 139 121 L 119 108 L 118 192 C 118 214 95 213 95 193 L 94 142 L 91 218 C 90 239 68 238 68 216 L 67 143 L 64 210 C 63 231 42 230 42 208 L 42 136 L 39 186 C 37 203 17 199 18 181 L 22 107 C 22 87 34 68 38 52 Z"
+                fill="#edc9a5" />
+              <path d="M 50 81 Q 79 91 101 78 M 59 107 Q 79 112 93 105" fill="none" stroke="#ba8861"
+                stroke-width="3" />
             </g>
             <g id="dryer-icon">
               <rect x="3" y="0" width="44" height="36" rx="9" fill="#f6f7ee" stroke="#185842" stroke-width="2" />
@@ -732,20 +723,15 @@
           </defs>
           <text x="170" y="33" fill="#ffffff" font-family="system-ui,sans-serif" font-size="16" font-weight="400"
             text-anchor="middle">Wet hands</text>
-          <g id="wet-hands-start" transform="translate(127.5 46) scale(0.25)">
-            <use href="#hand-pair" />
-            <g id="surface-droplets" fill="#ffffff" fill-opacity="0.7" stroke="#8daba6" stroke-opacity="0.65"
-              stroke-width="2" transform="translate(0 174) scale(1 -1)">
-              <g transform="rotate(20 112 110)">
-                <path transform="translate(99 88) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-                <path transform="translate(122 112) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-                <path transform="translate(112 57) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-              </g>
-              <g transform="translate(340 0) scale(-1 1) rotate(20 112 110)">
-                <path transform="translate(99 88) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-                <path transform="translate(122 112) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-                <path transform="translate(112 57) scale(1 -1)" d="M0 -9 Q-10 3 -5 8 Q0 13 5 8 Q10 3 0 -9Z" />
-              </g>
+          <g id="wet-hands-start" transform="translate(170 52) scale(0.20) translate(-337 -945)">
+            <use href="#flick-hand" transform="translate(198 970) rotate(-60) scale(.63) translate(-77 0)" />
+            <use href="#flick-hand"
+              transform="translate(476 970) scale(-1 1) rotate(-60) scale(.63) translate(-77 0)" />
+            <g id="wet-hand-droplets" fill="#b9e4e7" stroke="#548f91" stroke-width="2" fill-opacity="0.95">
+              <path transform="translate(291 1018)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
+              <path transform="translate(260 995) scale(.8)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
+              <path transform="translate(383 1018)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
+              <path transform="translate(414 995) scale(.8)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
             </g>
           </g>
           <path d="M170 94 V112 M83 128 V112 H257 V128" stroke="#c6dbbf" stroke-width="2" fill="none" />
@@ -760,13 +746,6 @@
             <!-- Match the Flick illustration in assets/images/wash-flick-dry.svg. -->
             <g id="flicking-hands" transform="translate(257 160) scale(0.25) translate(-337 -945)">
               <defs>
-                <g id="flick-hand" stroke="#185842" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-                  <path
-                    d="M 40 0 L 115 0 L 116 60 C 122 77 141 85 153 100 C 164 113 151 129 139 121 L 119 108 L 118 192 C 118 214 95 213 95 193 L 94 142 L 91 218 C 90 239 68 238 68 216 L 67 143 L 64 210 C 63 231 42 230 42 208 L 42 136 L 39 186 C 37 203 17 199 18 181 L 22 107 C 22 87 34 68 38 52 Z"
-                    fill="#edc9a5" />
-                  <path d="M 50 81 Q 79 91 101 78 M 59 107 Q 79 112 93 105" fill="none" stroke="#ba8861"
-                    stroke-width="3" />
-                </g>
                 <g id="flick-drop">
                   <path d="M 0 -13 C -5 -5 -10 1 -10 7 A 10 10 0 0 0 10 7 C 10 1 5 -5 0 -13 Z" fill="#73a9a1" />
                 </g>
