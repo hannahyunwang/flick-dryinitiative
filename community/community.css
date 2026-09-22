@@ -1,0 +1,55 @@
+/* Directory-only styles: match the homepage without changing its sections. */
+.community-page {
+  --ink: #12342e;
+  --muted: #48645d;
+  --paper: #f6f7ee;
+  --green: #185842;
+  --line: #cdd9cc;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-wrap: anywhere;
+}
+.community-page *, .community-page *::before, .community-page *::after { box-sizing: border-box; }
+.community-wrap { width: min(1000px, 90%); margin-inline: auto; }
+.community-page a { color: var(--green); text-underline-offset: 4px; }
+.community-page a:hover { text-decoration-thickness: 3px; }
+.community-page a:focus-visible { outline: 3px solid #ad591c; outline-offset: 5px; }
+.community-skip { position: absolute; top: -90px; padding: 12px; background: white; z-index: 2; }
+.community-skip:focus { top: 8px; }
+.community-header { border-bottom: 1px solid var(--line); }
+.community-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 25px; }
+.community-brand { font-weight: 800; font-size: 19px; text-decoration: none; }
+.community-bar nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 14px; }
+.community-bar a { display: inline-flex; align-items: center; min-height: 44px; }
+.community-bar nav a { text-decoration: none; }
+.community-intro { max-width: 760px; padding-block: 56px 30px; }
+.community-eyebrow { font-size: 12px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+.community-page h1 { font-size: clamp(36px, 5.5vw, 60px); line-height: 1.08; letter-spacing: -.045em; margin: 18px 0 24px; }
+.community-page h2 { font-size: 24px; line-height: 1.25; letter-spacing: -.025em; margin: 0 0 14px; }
+.community-page p { margin: 12px 0 20px; }
+.community-lead { color: var(--muted); font-size: 22px; }
+.community-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.community-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: #fffefa; overflow: hidden; }
+.community-card img { display: block; width: 100%; height: auto; }
+.community-card-copy { padding: 26px; }
+.community-card-copy p { color: var(--muted); font-size: 16px; }
+.community-card-copy a, .community-footer a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+.community-invitation { margin-block: 40px 56px; padding: 26px; background: #e7eddf; border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; }
+.community-invitation p { margin-bottom: 0; }
+.community-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 24px 40px; font-size: 13px; color: var(--muted); }
+@media (max-width: 700px) {
+  .community-bar { align-items: flex-start; flex-direction: column; gap: 12px; padding-block: 16px; }
+  .community-grid { grid-template-columns: minmax(0, 1fr); }
+  .community-intro { padding-top: 36px; }
+  .community-footer { align-items: flex-start; flex-direction: column; gap: 4px; }
+}
+@media (max-width: 480px) {
+  .community-wrap { width: calc(100% - 32px); }
+  .community-card-copy, .community-invitation { padding: 20px; }
+}
+@media print {
+  .community-page { background: white; }
+  .community-card { break-inside: avoid; }
+}
