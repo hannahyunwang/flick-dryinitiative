@@ -241,10 +241,48 @@
       border-radius: 18px
     }
 
-    .visual svg {
+    .visual.comparison {
+      width: 100%;
+      padding: 14px;
+      background: #ebf6f3;
+      border: 1px solid var(--line)
+    }
+
+    .comparison video {
       display: block;
       width: 100%;
-      height: auto
+      height: auto;
+      border-radius: 10px
+    }
+
+    .visual.comparison p {
+      color: var(--muted)
+    }
+
+    .comparison-toggle {
+      display: block;
+      margin: 10px auto 0;
+      min-height: 44px;
+      padding: 8px 16px;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--green);
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer
+    }
+
+    .comparison-toggle[hidden] { display: none }
+    .comparison-toggle:focus-visible { outline: 3px solid #ad591c; outline-offset: 3px }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap
     }
 
     .visual p {
@@ -697,81 +735,21 @@
           reduce its running time and energy use? Our first studies measure how much flicking reduces dryer running
           time—and the energy saved by running the dryer for less time.</p>
       </div>
-      <div class="visual"><svg viewBox="0 0 340 330" role="img" aria-labelledby="diagram-title diagram-desc">
-          <title id="diagram-title">Compare, measure, understand</title>
-          <desc id="diagram-desc">Small peach-colored hands with four pale-blue surface droplets, labeled Wet hands, lead to two alternatives. Left: Direct-dry,
-            with a dryer blowing air. Right: Flick-dry, highlighted in color, with flicking hands shedding
-            three droplets followed by a dryer blowing air. Both paths lead to a comparison of dryer running time. This
-            is a conceptual diagram, not results.</desc>
-          <defs>
-            <g id="flick-hand" stroke="#185842" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-              <path
-                d="M 40 0 L 115 0 L 116 60 C 122 77 141 85 153 100 C 164 113 151 129 139 121 L 119 108 L 118 192 C 118 214 95 213 95 193 L 94 142 L 91 218 C 90 239 68 238 68 216 L 67 143 L 64 210 C 63 231 42 230 42 208 L 42 136 L 39 186 C 37 203 17 199 18 181 L 22 107 C 22 87 34 68 38 52 Z"
-                fill="#edc9a5" />
-              <path d="M 50 81 Q 79 91 101 78 M 59 107 Q 79 112 93 105" fill="none" stroke="#ba8861"
-                stroke-width="3" />
-            </g>
-            <g id="dryer-icon">
-              <rect x="3" y="0" width="44" height="36" rx="9" fill="#f6f7ee" stroke="#185842" stroke-width="2" />
-              <path d="M12 10 H38" stroke="#cdd9cc" stroke-width="2" />
-              <circle cx="37" cy="23" r="2" fill="#185842" />
-              <rect x="13" y="30" width="24" height="6" rx="3" fill="#185842" />
-              <g fill="none" stroke="#185842" stroke-width="2" stroke-linecap="round">
-                <path d="M16 41 C10 47 22 51 16 58 M25 41 C19 47 31 51 25 58 M34 41 C28 47 40 51 34 58" />
-              </g>
-            </g>
-          </defs>
-          <text x="170" y="33" fill="#ffffff" font-family="system-ui,sans-serif" font-size="16" font-weight="400"
-            text-anchor="middle">Wet hands</text>
-          <g id="wet-hands-start" transform="translate(170 52) scale(0.20) translate(-337 -945)">
-            <use href="#flick-hand" transform="translate(198 970) rotate(-60) scale(.63) translate(-77 0)" />
-            <use href="#flick-hand"
-              transform="translate(476 970) scale(-1 1) rotate(-60) scale(.63) translate(-77 0)" />
-            <g id="wet-hand-droplets" fill="#b9e4e7" stroke="#548f91" stroke-width="2" fill-opacity="0.95">
-              <path transform="translate(291 1018)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
-              <path transform="translate(260 995) scale(.8)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
-              <path transform="translate(383 1018)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
-              <path transform="translate(414 995) scale(.8)" d="M0 -12 C-4 -6 -8 0 -8 5 A8 8 0 0 0 8 5 C8 0 4 -6 0 -12Z" />
-            </g>
-          </g>
-          <path d="M170 94 V112 M83 128 V112 H257 V128" stroke="#c6dbbf" stroke-width="2" fill="none" />
-          <g id="direct-drying">
-            <rect x="12" y="128" width="142" height="140" rx="14" fill="#f6f7ee" /><text x="83" y="151" fill="#12342e"
-              font-family="system-ui,sans-serif" font-size="16" text-anchor="middle">Direct-dry</text>
-            <use href="#dryer-icon" transform="translate(55.5 178) scale(1.1)" />
-          </g>
-          <g id="flick-dry-diagram">
-            <rect x="186" y="128" width="142" height="140" rx="14" fill="#e4ed99" /><text x="257" y="151" fill="#12342e"
-              font-family="system-ui,sans-serif" font-size="16" font-weight="750" text-anchor="middle">Flick-dry</text>
-            <!-- Match the Flick illustration in assets/images/wash-flick-dry.svg. -->
-            <g id="flicking-hands" transform="translate(257 160) scale(0.25) translate(-337 -945)">
-              <defs>
-                <g id="flick-drop">
-                  <path d="M 0 -13 C -5 -5 -10 1 -10 7 A 10 10 0 0 0 10 7 C 10 1 5 -5 0 -13 Z" fill="#73a9a1" />
-                </g>
-              </defs>
-              <use href="#flick-hand" transform="translate(180 970) rotate(-60) scale(.63) translate(-77 0)" />
-              <use href="#flick-hand"
-                transform="translate(494 970) scale(-1 1) rotate(-60) scale(.63) translate(-77 0)" />
-              <g fill="none" stroke="#185842" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path transform="translate(308 1042) rotate(-60) scale(.8) translate(-308 -1042)"
-                  d="M 284 1058 Q 308 1078 332 1058 M 286 1066 L 284 1058 L 292 1058 M 324 1058 L 332 1058 L 330 1066" />
-                <path transform="translate(366 1042) rotate(60) scale(.8) translate(-366 -1042)"
-                  d="M 342 1058 Q 366 1078 390 1058 M 344 1066 L 342 1058 L 350 1058 M 382 1058 L 390 1058 L 388 1066" />
-              </g>
-              <g id="falling-droplets">
-                <use href="#flick-drop" transform="translate(287 1100) scale(.7)" />
-                <use href="#flick-drop" transform="translate(308 1124) scale(.7)" />
-                <use href="#flick-drop" transform="translate(366 1106) scale(.7)" />
-              </g>
-            </g>
-            <use href="#dryer-icon" transform="translate(237 211) scale(0.8)" />
-          </g>
-          <path d="M83 276 V290 H257 V276 M170 290 V299" stroke="#c6dbbf" stroke-width="2" fill="none" />
-          <text x="170" y="322" fill="#e4ed99" font-family="system-ui,sans-serif" font-size="15"
-            text-anchor="middle">Compare dryer running time</text>
-        </svg>
+      <div class="visual comparison" id="dryer-comparison">
+        <video id="comparison-video" width="648" height="744" muted loop playsinline preload="metadata"
+          poster="assets/images/dryer-runtime-comparison.png" aria-label="Animated dryer running time comparison"
+          aria-describedby="comparison-description">
+          <source src="assets/videos/dryer-runtime-comparison.mp4" type="video/mp4">
+          Your browser does not support this animation. The example compares 15 seconds of direct-drying with
+          10 seconds after flicking: 5 seconds, or 33.3%, less dryer time. Not measured or guaranteed.
+        </video>
+        <button class="comparison-toggle" type="button" aria-controls="comparison-video" hidden>Play animation</button>
         <p>Less dryer running time means less energy use.</p>
+        <p id="comparison-description" class="visually-hidden">Wash and rinse, then compare direct-drying with
+          flicking followed by drying. The accelerated example timers show 15 seconds versus 10 seconds:
+          5 seconds, or 33.3%, less dryer time. Example only, not measured or guaranteed.</p>
+        <noscript><p>Example: 15 seconds versus 10 seconds — 5 seconds / 33.3% less dryer time.
+          Not measured or guaranteed.</p></noscript>
       </div>
     </div>
     <section id="flick-dry" aria-labelledby="flick-dry-heading">
@@ -1063,6 +1041,21 @@
         the analytics script or JavaScript is disabled.</p>
     </details>
   </footer>
+  <script>
+    (() => {
+      const video = document.getElementById('comparison-video');
+      const toggle = document.querySelector('.comparison-toggle');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const updateLabel = () => { toggle.textContent = video.paused ? 'Play animation' : 'Pause animation'; };
+      const play = () => { video.play().catch(updateLabel); };
+      toggle.hidden = false;
+      video.addEventListener('play', updateLabel);
+      video.addEventListener('pause', updateLabel);
+      toggle.addEventListener('click', () => { if (video.paused) play(); else video.pause(); });
+      reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) video.pause(); });
+      if (!reducedMotion.matches) play();
+    })();
+  </script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "bb09c1bdc38b4dc6b11221caf2ec21e2"}'></script>
