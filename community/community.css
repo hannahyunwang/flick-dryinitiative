@@ -30,11 +30,13 @@
 .community-page h2 { font-size: 24px; line-height: 1.25; letter-spacing: -.025em; margin: 0 0 14px; }
 .community-page p { margin: 12px 0 20px; }
 .community-lead { color: var(--muted); font-size: 22px; }
-.community-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.community-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: #fffefa; overflow: hidden; }
-.community-card img { display: block; width: 100%; height: auto; }
-.community-card-copy { padding: 26px; }
-.community-card-copy p { color: var(--muted); font-size: 16px; }
+.community-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.community-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: #fffefa; }
+.community-card-copy { display: flex; flex-direction: column; height: 100%; padding: 22px; }
+.community-card h2 { font-size: 21px; margin-bottom: 8px; }
+.community-card-copy > a { margin-top: auto; font-size: 15px; }
+.community-location-note { color: var(--muted); font-size: 14px; }
+.community-card-copy p { color: var(--muted); font-size: 16px; margin: 0 0 10px; }
 .community-card-copy a, .community-footer a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
 .community-invitation { margin-block: 40px 56px; padding: 26px; background: #e7eddf; border-left: 4px solid var(--green); border-radius: 0 10px 10px 0; }
 .community-invitation p { margin-bottom: 0; }
