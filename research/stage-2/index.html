@@ -101,6 +101,7 @@
       font-size: 14px
     }
   </style>
+  <link rel="stylesheet" href="../../assets/css/regional-analytics.css">
 </head>
 
 <body>
@@ -358,8 +359,18 @@
       <p>This page uses cookieless Cloudflare Web Analytics for aggregate usage and performance statistics.
         <a href="../../index.html#privacy">Analytics and privacy details</a>.
       </p>
+      <div class="regional-preferences" data-regional-controls hidden role="group" aria-label="Regional statistics preferences">
+        <p><strong>Regional statistics</strong> — optional country and province/state page-view counts.</p>
+        <p data-regional-status role="status" aria-live="polite">Regional statistics are off.</p>
+        <div class="regional-actions">
+          <button type="button" data-regional-allow disabled>Allow regional statistics</button>
+          <button type="button" data-regional-deny>Keep regional statistics off</button>
+        </div>
+      </div>
+      <noscript><p>Optional regional statistics are off because JavaScript is disabled.</p></noscript>
     </footer>
   </main>
+  <script defer src="../../assets/js/regional-analytics.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "bb09c1bdc38b4dc6b11221caf2ec21e2"}'></script>

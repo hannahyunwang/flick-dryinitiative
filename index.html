@@ -721,6 +721,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/css/regional-analytics.css">
 </head>
 
 <body>
@@ -1051,7 +1052,31 @@
         add names, email addresses, recordings, or participant identifiers to analytics. GitHub Pages also
         logs visitor IP addresses for security purposes. The website remains usable if your browser blocks
         the analytics script or JavaScript is disabled.</p>
+      <p>Optional regional statistics are separate from the existing Cloudflare Web Analytics reports. When
+        enabled and you choose to allow them, a Cloudflare Worker receives an empty page-view request and
+        uses Cloudflare’s IP-derived country and province/state estimate. Our regional counter stores only
+        the UTC day, country, province/state code and name, and a count. It does not store IP addresses or
+        IP hashes, cookies, visitor IDs, browsing histories, page URLs, referrers, cities, or coordinates.</p>
+      <p>Regional statistics are off by default. The controls below save only your consent preference on this
+        device, not an identifier; you can turn regional statistics off at any time. We respect Do Not Track
+        and Global Privacy Control signals. Turning them off does not remove an already aggregated count or
+        disable the existing Cloudflare Web Analytics script.</p>
+      <p>The regional database keeps daily counts for 90 UTC days. Cloudflare’s D1 recovery copies may retain
+        deleted aggregates for up to another 30 days. Regional reports omit groups with fewer than five
+        page views and do not expose totals that reveal the omitted counts. These are consenting page views,
+        not unique people or evidence that a particular college visited. Cloudflare still processes IP
+        addresses to provide network and location services; our counter has request logging disabled, but
+        Cloudflare and GitHub may separately process security and operational data under their own policies.</p>
     </details>
+    <div class="regional-preferences" data-regional-controls hidden role="group" aria-label="Regional statistics preferences">
+      <p><strong>Regional statistics</strong> — optional country and province/state page-view counts.</p>
+      <p data-regional-status role="status" aria-live="polite">Regional statistics are off.</p>
+      <div class="regional-actions">
+        <button type="button" data-regional-allow disabled>Allow regional statistics</button>
+        <button type="button" data-regional-deny>Keep regional statistics off</button>
+      </div>
+    </div>
+    <noscript><p>Optional regional statistics are off because JavaScript is disabled.</p></noscript>
   </footer>
   <script>
     (() => {
@@ -1068,6 +1093,7 @@
       if (!reducedMotion.matches) play();
     })();
   </script>
+  <script defer src="assets/js/regional-analytics.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "bb09c1bdc38b4dc6b11221caf2ec21e2"}'></script>

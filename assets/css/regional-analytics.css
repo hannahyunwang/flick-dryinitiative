@@ -1,0 +1,35 @@
+.regional-preferences {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid #cdd9cc;
+  border-radius: .75rem;
+  color: #12342e;
+  background: #f6f7ee;
+  font-family: Arial, sans-serif;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.community-footer { flex-wrap: wrap; }
+.community-footer .regional-preferences { flex: 0 0 100%; }
+.regional-preferences[hidden] { display: none; }
+.regional-preferences p { margin: 0 0 .65rem; }
+.regional-preferences a { color: #185842; }
+.regional-preferences .regional-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.regional-preferences button {
+  box-sizing: border-box;
+  min-height: 44px;
+  max-width: 100%;
+  padding: .6rem .85rem;
+  border: 1px solid #185842;
+  border-radius: .45rem;
+  color: #12342e;
+  background: #fff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.regional-preferences button:hover:not(:disabled) { background: #e4ed99; }
+.regional-preferences button:focus-visible { outline: 3px solid #185842; outline-offset: 3px; }
+.regional-preferences button:disabled { opacity: .65; cursor: default; }
