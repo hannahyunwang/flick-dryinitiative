@@ -1,4 +1,4 @@
 {
-  "enabled": false,
+  "enabled": true,
   "endpoint": "https://flick-dry-regional.hannahwang50.workers.dev/collect"
 }
