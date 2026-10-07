@@ -1,0 +1,2 @@
+# Local verification only; never publish tests to this public repository.
+/tests/
