@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Stage 2 exploratory analysis of Flick-dry archive runtimes, with per-set results, quality notes, and limitations.">
+  <title>Stage 2 archive analysis — Flick-dry Initiative</title>
+  <link rel="canonical" href="https://flick-dryinitiative.org/research/stage-2/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flick-dry Initiative">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:title" content="Stage 2 archive analysis — Flick-dry Initiative">
+  <meta property="og:description" content="Exploratory analysis of 96 reviewed hand-dryer runs: per-set results, quality notes, and the limits of what the data shows.">
+  <meta property="og:url" content="https://flick-dryinitiative.org/research/stage-2/">
+  <meta property="og:image" content="https://flick-dryinitiative.org/assets/images/share-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Flick-dry Initiative — Flick first. Dry smarter. Hands flicking water into a sink, then drying with a hand dryer or a paper towel.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stage 2 archive analysis — Flick-dry Initiative">
+  <meta name="twitter:description" content="Exploratory analysis of 96 reviewed hand-dryer runs: per-set results, quality notes, and the limits of what the data shows.">
+  <meta name="twitter:image" content="https://flick-dryinitiative.org/assets/images/share-card.png">
+  <meta name="twitter:image:alt" content="Flick-dry Initiative — Flick first. Dry smarter. Hands flicking water into a sink, then drying with a hand dryer or a paper towel.">
+  <style>
+    body {
+      font: 17px/1.65 system-ui, sans-serif;
+      color: #12342e;
+      background: #f6f7ee;
+      margin: 0
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 5%
+    }
+
+    a {
+      color: #185842
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.12
+    }
+
+    h2 {
+      margin-top: 45px;
+      line-height: 1.25
+    }
+
+    .note {
+      background: #e4edcf;
+      border-left: 4px solid #185842;
+      padding: 20px
+    }
+
+    .scroll {
+      overflow-x: auto
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #cad7c8
+    }
+
+    caption {
+      text-align: left;
+      margin-bottom: 15px
+    }
+
+    svg {
+      width: 100%;
+      height: auto
+    }
+
+    li {
+      margin: 8px 0
+    }
+
+    a:focus-visible {
+      outline: 3px solid #ad591c;
+      outline-offset: 4px
+    }
+
+    footer {
+      border-top: 1px solid #cad7c8;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 14px
+    }
+  </style>
+</head>
+
+<body>
+  <main><a href="../../#research">← Flick-dry public research record</a>
+    <p>STAGE 2 · EXPLORATORY ARCHIVE ANALYSIS · VERSION 1</p>
+    <h1>Shorter recorded dryer runtimes.<br>Less energy used.</h1>
+    <p>Analysis snapshot: September 6, 2026. Measurement period: August 18–September 5, 2026. This public edition
+      summarizes an existing archive analysis, not a new controlled experiment or peer-reviewed paper. All runs used
+      electric hand dryers; paper-towel use was not part of this analysis.</p>
+    <div class="note"><strong>Interpretation first:</strong> All 15 provisional comparison sets show lower median
+      recorded runtime for flick-dry. This is descriptive evidence worth investigating—showing shorter dryer running
+      times and the corresponding reduction in energy use. The practical research focus is reducing dryer running time
+      to save energy.</div>
+    <h2 id="how-produced">How these observations were produced</h2>
+    <ol>
+      <li><strong>Collect &amp; develop.</strong> We first recorded dryers running, then used those recordings to
+        develop and check the dryer-timing tool, the <strong>Flick First Dryer Verifier</strong> app.</li>
+      <li><strong>Record &amp; review.</strong> The app recorded dryer runs during flick-dry and direct-dry trials, and
+        each run was reviewed and labelled; see <a href="#trial-conditions">Trial conditions and limitations</a>.</li>
+      <li><strong>Analyze &amp; report.</strong> Exports were checked, repeated records removed, invalid runs excluded,
+        and runtimes compared within sets; see <a href="#method">Method</a> and the per-set table below.</li>
+    </ol>
+    <h2>Dataset and accounting</h2>
+    <p>14 ZIP exports contained 116 exported run records. Removing 14 exact repeated records left 102 unique runs: 49
+      classified for this public report as flick-dry, 47 as direct-dry, and 6 invalid measurement. The 96 valid reviewed
+      runs enter comparisons; invalid runs are excluded. </p>
+    <h2 id="method">Method</h2>
+    <p>Compare conditions within archive/measurement-date sets, a provisional proxy rather than verified person/dryer
+      identity. Do not pool individual runtimes across sets. Exact duplicate start/stop/runtime signatures were counted
+      once and their canonical labels agreed. Legacy review labels were normalized; comments were not parsed as reviews.
+      Public condition names are flick-dry and direct-dry; the private source labels and measurements are unchanged.</p>
+    <p>Within-set median reduction (%) = 100 × (direct-dry median − flick-dry median) / direct-dry median. Medians were
+      checked using integer-millisecond input. Displayed seconds use half-up rounding; differences are computed before
+      rounding displayed medians.</p>
+    <h2 id="trial-conditions">Trial conditions and limitations</h2>
+    <p>The trial procedure below is as described by the project team; trial order, timing, and labels come from the
+      run records.</p>
+    <h3>How the trials were run</h3>
+    <ul>
+      <li>Every trial started with freshly washed hands, rinsed the same way each time.</li>
+      <li>Flick-dry trials flicked excess water off 12 times into the sink before drying; direct-dry trials went
+        straight to the dryer.</li>
+      <li>In both conditions, people stopped drying when their hands felt dry, as they would in everyday use.</li>
+      <li>Several people took part. Within a set, flick-dry and direct-dry trials alternated: strictly in 12 of the 15
+        sets, and mostly in the other 3. Each set took between 1 and 15 minutes.</li>
+    </ul>
+    <h3>What each record contains</h3>
+    <ul>
+      <li>The app records when the dryer's sound starts and stops; running time is the difference. It checks the sound
+        about every 60 ms. This is the detection interval; overall timing accuracy also depends on detection
+        thresholds and recorder delay, which were not measured independently.</li>
+      <li>All 14 exports passed file-integrity and audio sample-accounting checks.</li>
+      <li>Each run was reviewed and labelled flick-dry, direct-dry, or invalid measurement; invalid runs are excluded.</li>
+    </ul>
+    <h3>What was not controlled or recorded</h3>
+    <ul>
+      <li>Who performed each run, and which dryer was used: the records store no person or dryer IDs, so sets are
+        grouped by export and date instead, and a set may combine runs from more than one person.</li>
+      <li>How much water flicking removed, and how dry hands were at the end: neither was measured. Dryness was each
+        person's own judgement.</li>
+      <li>Trial order: every set started with a flick-dry trial, so effects such as the dryer warming up are not
+        balanced between the two conditions.</li>
+      <li>Dryer power: not measured. The energy figures below use example power ratings.</li>
+      <li>Only 12 flicks were tested; other flick counts have not been compared.</li>
+    </ul>
+    <h2>Per-set observations</h2>
+    <p>Anonymous set IDs preserve the source analysis order. Exact timestamps, export filenames, raw recordings, and
+      private records are not included in this public edition. These IDs do not establish independent participants.</p>
+    <svg viewBox="0 0 500 590" role="img"
+      aria-label="Observed within-set median runtime reductions from 13.0 to 53.8 percent; detailed values and sample sizes in the table"><text
+        x="10" y="25" font-weight="bold">Median runtime reduction by provisional set</text><text x="10"
+        y="70">S01</text>
+      <rect x="75" y="55" width="165.44" height="22" rx="3" fill="#185842" /><text x="250.44" y="71">27.6%</text><text
+        x="10" y="104">S02 *</text>
+      <rect x="75" y="89" width="279.41" height="22" rx="3" fill="#185842" /><text x="364.41" y="105">46.6%</text><text
+        x="10" y="138">S03</text>
+      <rect x="75" y="123" width="225.99" height="22" rx="3" fill="#185842" /><text x="310.99" y="139">37.7%</text><text
+        x="10" y="172">S04</text>
+      <rect x="75" y="157" width="217.33" height="22" rx="3" fill="#185842" /><text x="302.33" y="173">36.2%</text><text
+        x="10" y="206">S05</text>
+      <rect x="75" y="191" width="202.89" height="22" rx="3" fill="#185842" /><text x="287.89" y="207">33.8%</text><text
+        x="10" y="240">S06 *</text>
+      <rect x="75" y="225" width="256.66" height="22" rx="3" fill="#185842" /><text x="341.66" y="241">42.8%</text><text
+        x="10" y="274">S07 *</text>
+      <rect x="75" y="259" width="256.46" height="22" rx="3" fill="#185842" /><text x="341.46" y="275">42.7%</text><text
+        x="10" y="308">S08 *</text>
+      <rect x="75" y="293" width="175.26" height="22" rx="3" fill="#185842" /><text x="260.26" y="309">29.2%</text><text
+        x="10" y="342">S09 *</text>
+      <rect x="75" y="327" width="78.12" height="22" rx="3" fill="#185842" /><text x="163.12" y="343">13.0%</text><text
+        x="10" y="376">S10 *</text>
+      <rect x="75" y="361" width="236.88" height="22" rx="3" fill="#185842" /><text x="321.88" y="377">39.5%</text><text
+        x="10" y="410">S11</text>
+      <rect x="75" y="395" width="293.15" height="22" rx="3" fill="#185842" /><text x="378.15" y="411">48.9%</text><text
+        x="10" y="444">S12</text>
+      <rect x="75" y="429" width="263.33" height="22" rx="3" fill="#185842" /><text x="348.33" y="445">43.9%</text><text
+        x="10" y="478">S13</text>
+      <rect x="75" y="463" width="146.65" height="22" rx="3" fill="#185842" /><text x="231.65" y="479">24.4%</text><text
+        x="10" y="512">S14 *</text>
+      <rect x="75" y="497" width="322.57" height="22" rx="3" fill="#185842" /><text x="407.57" y="513">53.8%</text><text
+        x="10" y="546">S15</text>
+      <rect x="75" y="531" width="201.44" height="22" rx="3" fill="#185842" /><text x="286.44" y="547">33.6%</text><text
+        x="10" y="585" font-size="12">* Fewer than three runs in at least one condition.</text>
+    </svg>
+    <div class="scroll" role="region" aria-label="Per-set results; scroll horizontally on small screens" tabindex="0">
+      <table>
+        <caption>Counts are flick-dry / direct-dry. Durations and differences are seconds. Invalid runs are excluded
+          from both conditions.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Set</th>
+            <th scope="col">n</th>
+            <th scope="col">Flick-dry median</th>
+            <th scope="col">Direct-dry median</th>
+            <th scope="col">Difference</th>
+            <th scope="col">Reduction</th>
+            <th scope="col">Invalid</th>
+            <th scope="col">Caution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">S01</th>
+            <td>5 / 5</td>
+            <td>7.880</td>
+            <td>10.880</td>
+            <td>3.000</td>
+            <td>27.57%</td>
+            <td>0</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S02</th>
+            <td>3 / 1</td>
+            <td>8.518</td>
+            <td>15.942</td>
+            <td>7.424</td>
+            <td>46.57%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S03</th>
+            <td>3 / 3</td>
+            <td>12.093</td>
+            <td>19.400</td>
+            <td>7.307</td>
+            <td>37.66%</td>
+            <td>0</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S04</th>
+            <td>4 / 5</td>
+            <td>7.270</td>
+            <td>11.399</td>
+            <td>4.129</td>
+            <td>36.22%</td>
+            <td>1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S05</th>
+            <td>5 / 6</td>
+            <td>11.000</td>
+            <td>16.620</td>
+            <td>5.620</td>
+            <td>33.81%</td>
+            <td>0</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S06</th>
+            <td>2 / 2</td>
+            <td>12.960</td>
+            <td>22.648</td>
+            <td>9.688</td>
+            <td>42.78%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S07</th>
+            <td>1 / 1</td>
+            <td>9.081</td>
+            <td>15.860</td>
+            <td>6.779</td>
+            <td>42.74%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S08</th>
+            <td>2 / 2</td>
+            <td>10.400</td>
+            <td>14.691</td>
+            <td>4.291</td>
+            <td>29.21%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S09</th>
+            <td>1 / 1</td>
+            <td>12.299</td>
+            <td>14.140</td>
+            <td>1.841</td>
+            <td>13.02%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S10</th>
+            <td>2 / 2</td>
+            <td>7.530</td>
+            <td>12.442</td>
+            <td>4.912</td>
+            <td>39.48%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S11</th>
+            <td>4 / 4</td>
+            <td>5.861</td>
+            <td>11.461</td>
+            <td>5.600</td>
+            <td>48.86%</td>
+            <td>2</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S12</th>
+            <td>6 / 6</td>
+            <td>10.358</td>
+            <td>18.459</td>
+            <td>8.102</td>
+            <td>43.89%</td>
+            <td>1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S13</th>
+            <td>5 / 4</td>
+            <td>7.419</td>
+            <td>9.819</td>
+            <td>2.400</td>
+            <td>24.44%</td>
+            <td>1</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <th scope="row">S14</th>
+            <td>1 / 1</td>
+            <td>8.378</td>
+            <td>18.119</td>
+            <td>9.741</td>
+            <td>53.76%</td>
+            <td>0</td>
+            <td>Small sample</td>
+          </tr>
+          <tr>
+            <th scope="row">S15</th>
+            <td>5 / 4</td>
+            <td>7.180</td>
+            <td>10.809</td>
+            <td>3.629</td>
+            <td>33.57%</td>
+            <td>1</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Energy savings calculated from dryer running time</h2>
+    <p>For a dryer operating at constant power, the percentage reduction in running time is also the percentage
+    reduction in operating energy. The calculations below use several example power ratings to show how the observed
+    runtime difference translates into energy saved.</p>
+    <p>Across the 15 comparison sets, the average of the within-set median differences shown in the table above is
+      5.631 seconds per use. Each set counts equally, regardless of how many runs it contains.
+      The calculations below translate this time saving into energy savings at different example dryer power ratings.
+    </p>
+    <p>Illustrative energy difference (Wh/use) = assumed power (W) × average runtime difference (s) / 3600. At an assumed
+      1,500 W, this yields <strong>2.346 Wh/use</strong>. The calculation uses 1,500 W as an example dryer power rating.
+    </p>
+    <ul>
+      <li>500 W assumed: 0.782 Wh/use.</li>
+      <li>1,000 W assumed: 1.564 Wh/use.</li>
+      <li>1,500 W assumed: 2.346 Wh/use.</li>
+      <li>2,000 W assumed: 3.128 Wh/use.</li>
+      <li>2,300 W assumed: 3.597 Wh/use.</li>
+    </ul>
+    <p><strong>Small-sample sensitivity:</strong> Restricting to the eight sets with at least three runs per condition
+      gives an average of the within-set median differences of 4.973 seconds. This filter does not address the
+      <a href="#trial-conditions">limitations above</a> or make runs independent.</p>
+    <footer>Flick-dry Initiative · Hannah, project lead · Public edition v1<br><a
+        href="../../#research">Return to the website</a>
+      <p>This page uses cookieless Cloudflare Web Analytics for aggregate usage and performance statistics.
+        <a href="../../#privacy">Analytics and privacy details</a>.
+      </p>
+    </footer>
+  </main>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "bb09c1bdc38b4dc6b11221caf2ec21e2"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
