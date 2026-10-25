@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://flick-dryinitiative.org/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/community/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/research/measure-it-yourself/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/research/stage-1/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/research/stage-2/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/research/stage-3/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/sticker/</loc>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/videos/hand-dryer/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/KuhwQ-MNEbQ/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>How to flick-dry your hands with a hand dryer</video:title>
+      <video:description>An animated guide to flick-drying your hands with a hand dryer: wash and rinse well, flick excess water off over the sink with splashes contained (skip if unsafe), then use the hand dryer until your hands feel dry.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/KuhwQ-MNEbQ</video:player_loc>
+      <video:duration>38</video:duration>
+      <video:publication_date>2026-10-08T17:45:24-07:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://flick-dryinitiative.org/videos/paper-towels/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/HedoPrI0a1o/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>How to flick-dry your hands with paper towels</video:title>
+      <video:description>An animated guide to flick-drying your hands with paper towels: wash and rinse well, flick excess water off over the sink with splashes contained (skip if unsafe), use one paper towel, folding it if that helps, dry thoroughly, then put used towels in the bin.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/HedoPrI0a1o</video:player_loc>
+      <video:duration>42</video:duration>
+      <video:publication_date>2026-10-08T17:49:49-07:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+</urlset>
