@@ -1,0 +1,5 @@
+# Local verification only; never publish tests to this public repository.
+/tests/
+
+# Local poster build script and translations (posters/build.py); not part of the published site.
+/posters/
