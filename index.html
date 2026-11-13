@@ -406,17 +406,45 @@
       margin: 0
     }
 
+    /* Stainless-steel phone frame with two side buttons (matches the 0.17.0 Instagram launch post). */
+    .app-phone {
+      position: relative;
+      display: block;
+      padding: 7px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #f4f6f8 0%, #b9bfc6 14%, #eef1f4 30%, #8f969e 48%, #dfe3e7 64%, #a4abb3 82%, #f2f4f6 100%);
+      box-shadow: 0 0 0 1px #6f767e, inset 0 0 0 1px rgba(255, 255, 255, .85), inset 0 0 0 2.5px rgba(90, 97, 105, .35),
+        0 22px 36px -18px rgba(0, 0, 0, .55)
+    }
+
+    .app-phone::before,
+    .app-phone::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      width: 4px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(90deg, #8f969e, #e9ecef 50%, #9aa1a9);
+      box-shadow: 1px 0 0 rgba(0, 0, 0, .18)
+    }
+
+    .app-phone::before {
+      top: 17%;
+      height: 7%
+    }
+
+    .app-phone::after {
+      top: 27%;
+      height: 12%
+    }
+
     .app-shot img {
       display: block;
       width: 100%;
       height: auto;
-      /* Gradient frame: the app's mint green fading into the site's brand green. */
-      border: 7px solid transparent;
-      border-radius: 26px;
-      background:
-        linear-gradient(#edf6f2, #edf6f2) padding-box,
-        linear-gradient(150deg, #7fd3ad, #3fa47c 40%, var(--green) 100%) border-box;
-      box-shadow: 0 0 0 1px rgba(24, 88, 66, .18), 0 18px 34px -16px rgba(24, 88, 66, .5)
+      border: 2px solid #0c1a17;
+      border-radius: 23px;
+      background: #0c1a17
     }
 
     .app-shot figcaption {
@@ -465,7 +493,7 @@
         grid-auto-columns: minmax(190px, 42%);
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-bottom: 14px
+        padding: 0 6px 14px 0
       }
 
       .app-shot {
@@ -997,33 +1025,33 @@
 
       <div class="app-shots" role="list" aria-label="Flick-dry app screenshots">
         <figure class="app-shot" role="listitem">
-          <img src="assets/images/app/app-0.17.0-home-hand-dryer.webp" width="720" height="1480" loading="lazy"
+          <span class="app-phone"><img src="assets/images/app/app-0.17.0-home-hand-dryer.webp" width="720" height="1480" loading="lazy"
             decoding="async"
-            alt="Flick-dry Home in Hand Dryer mode: an animation compares 15 seconds of direct-drying with 10 seconds after flicking, 5 seconds or 33.3% less dryer time, labelled as an example, with Watch intro and Time a hand-dryer run buttons.">
+            alt="Flick-dry Home in Hand Dryer mode: an animation compares 15 seconds of direct-drying with 10 seconds after flicking, 5 seconds or 33.3% less dryer time, labelled as an example, with Watch intro and Time a hand-dryer run buttons."></span>
           <figcaption><strong>Flick first</strong> See how flicking shortens dryer time.</figcaption>
         </figure>
         <figure class="app-shot" role="listitem">
-          <img src="assets/images/app/app-0.17.0-trial-result.webp" width="720" height="1480" loading="lazy"
+          <span class="app-phone"><img src="assets/images/app/app-0.17.0-trial-result.webp" width="720" height="1480" loading="lazy"
             decoding="async"
-            alt="Intro page from our hand-dryer trial: straight to the dryer 14.8 seconds, flick 12 times first 9.2 seconds, 5.6 seconds less dryer time per use, about 2.3 Wh less energy per use with a 1,500 W dryer.">
+            alt="Intro page from our hand-dryer trial: straight to the dryer 14.8 seconds, flick 12 times first 9.2 seconds, 5.6 seconds less dryer time per use, about 2.3 Wh less energy per use with a 1,500 W dryer."></span>
           <figcaption><strong>Our trial</strong> 5.6 s less dryer time per use.</figcaption>
         </figure>
         <figure class="app-shot" role="listitem">
-          <img src="assets/images/app/app-0.17.0-home-paper-towels.webp" width="720" height="1480" loading="lazy"
+          <span class="app-phone"><img src="assets/images/app/app-0.17.0-home-paper-towels.webp" width="720" height="1480" loading="lazy"
             decoding="async"
-            alt="Flick-dry Home in Paper Towels mode: an animation shows 2 sheets for direct-dry and 1 sheet after flicking, 1 sheet saved, with a Count sheets button.">
+            alt="Flick-dry Home in Paper Towels mode: an animation shows 2 sheets for direct-dry and 1 sheet after flicking, 1 sheet saved, with a Count sheets button."></span>
           <figcaption><strong>Paper towels too</strong> Flick, then use fewer sheets.</figcaption>
         </figure>
         <figure class="app-shot" role="listitem">
-          <img src="assets/images/app/app-0.17.0-count-sheets.webp" width="720" height="1480" loading="lazy"
+          <span class="app-phone"><img src="assets/images/app/app-0.17.0-count-sheets.webp" width="720" height="1480" loading="lazy"
             decoding="async"
-            alt="Flick-dry Runs, Paper Towels: a towel spot, Direct-dry and Flick-dry choices, a counter showing 2 sheets, a large plus one sheet button, Undo and Save count.">
+            alt="Flick-dry Runs, Paper Towels: a towel spot, Direct-dry and Flick-dry choices, a counter showing 2 sheets, a large plus one sheet button, Undo and Save count."></span>
           <figcaption><strong>Tap to count</strong> One tap per sheet, no microphone.</figcaption>
         </figure>
         <figure class="app-shot" role="listitem">
-          <img src="assets/images/app/app-0.17.0-analytics-paper-towels.webp" width="720" height="1480"
+          <span class="app-phone"><img src="assets/images/app/app-0.17.0-analytics-paper-towels.webp" width="720" height="1480"
             loading="lazy" decoding="async"
-            alt="Analytics for paper towels, marked On device: median sheets per dry, Direct-dry 2 sheets and Flick-dry 1 sheet, 1 sheet saved per use, with recent counts.">
+            alt="Analytics for paper towels, marked On device: median sheets per dry, Direct-dry 2 sheets and Flick-dry 1 sheet, 1 sheet saved per use, with recent counts."></span>
           <figcaption><strong>Your results</strong> Compare your own counts and times.</figcaption>
         </figure>
       </div>
